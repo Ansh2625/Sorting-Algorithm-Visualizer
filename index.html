@@ -13,12 +13,17 @@
     <div id="wrapper">
         <div id="container"></div>
             <div class="buttons">
-                <button onclick="bubbleSort()">Bubble Sort</button>
-                <button onclick="selectionSort()">Selection Sort</button>
-                <button onclick="insertionSort()">Insertion Sort</button>
-                <button onclick="mergeSort()">Merge Sort</button>
-                <button onclick="quickSort()">Quick Sort</button>
+                <button onclick="complexityView('bubbleSort')">Bubble Sort</button>
+                <button onclick="complexityView('selectionSort')">Selection Sort</button>
+                <button onclick="complexityView('insertionSort')">Insertion Sort</button>
+                <button onclick="complexityView('mergeSort')">Merge Sort</button>
+                <button onclick="complexityView('quickSort')">Quick Sort</button>
             </div>
+        <div id="complexity">
+            <h2>Complexity</h2>
+            <p id="time">Time Complexity: </p>
+            <p id="space">Space Complexity: </p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

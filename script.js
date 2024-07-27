@@ -24,6 +24,49 @@ function renderArray(activeIndex = -1)
     }
 }
 
+function complexityView(algorithm)
+{
+    resetComplexity();
+
+    switch(algorithm)
+    {
+        case 'bubbleSort':
+            setComplexity('Best -> O(n), Avg/Worst -> O(n^2)','O(1)');
+            bubbleSort();
+            break;
+        case 'selectionSort':
+            setComplexity('Best/Avg/Worst -> O(n^2)','O(1)');
+            selectionSort();
+            break;
+        case 'insertionSort':
+            setComplexity('Best -> O(n), Avg/Worst -> O(n^2)','O(1)');
+            insertionSort();
+            break;
+        case 'mergeSort':
+            setComplexity('Best/Avg/Worst -> O(n logn)','O(n)');
+            mergeSort();
+            break;
+        case 'quickSort':
+            setComplexity('Best/Avg -> O(n logn), Worst -> O(n^2)','O(1)');
+            quickSort();
+            break;
+        default:
+            break;
+    }
+}
+
+function setComplexity(timeComplexity, spaceComplexity)
+{
+    document.getElementById('time').textContent = `Time Complexity: ${timeComplexity}`;
+    document.getElementById('space').textContent = `Space Complexity: ${spaceComplexity}`;
+}
+
+function resetComplexity()
+{
+    document.getElementById('time').textContent = 'Time Complexity:';
+    document.getElementById('space').textContent = 'Space Complexity:';
+}
+
 async function bubbleSort()
 {
     let f = 1;

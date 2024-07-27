@@ -63,3 +63,21 @@ button:hover
     background-color: orange;
     color: black;
 }
+
+#complexity
+{
+    margin-top: 100px;
+}
+
+#complexity h2
+{
+    font-size: 2rem;
+    margin-right: 200px;
+    color: rgb(64, 63, 63);
+}
+
+#complexity p
+{
+    font-size: larger;
+    margin-right: 80px;
+}
