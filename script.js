@@ -130,3 +130,43 @@ async function merge(arr,start,mid,end)
 
     renderArray();
 }
+
+async function quickSort(arr = array, low = 0, high = array.length-1)
+{
+    if(low<high)
+    {
+        const pi = await partition(arr,low,high);
+        await quickSort(arr,low,pi-1);
+        await quickSort(arr,pi+1,high);
+    }
+    renderArray();
+}
+
+async function partition(arr,low,high)
+{
+    const pivot = arr[low];
+    let i = low;
+    let j = high;
+
+    while(i<j)
+    {
+        while(arr[i] <= pivot)
+            i++;
+        while(arr[j] > pivot)
+            j--;
+        
+        if(i<j)
+        {
+            [arr[i],arr[j]] = [arr[j],arr[i]];
+            renderArray(i);
+            await new Promise(resolve => setTimeout(resolve,1000));
+        }    
+    }
+
+    [arr[low],arr[j]] = [arr[j],arr[low]];
+
+    renderArray(j);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    return j;
+}
