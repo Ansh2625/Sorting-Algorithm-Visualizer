@@ -85,3 +85,48 @@ async function insertionSort()
     }
     renderArray();
 }
+
+async function mergeSort(arr = array, start = 0, end = arr.length-1)
+{
+    if(start >= end)
+        return;
+
+    const mid = Math.floor((start+end)/2);
+    await mergeSort(arr,start,mid);
+    await mergeSort(arr,mid+1,end);
+    await merge(arr,start,mid,end);
+}
+
+async function merge(arr,start,mid,end)
+{
+    const left = arr.slice(start,mid+1);
+    const right = arr.slice(mid+1,end+1);
+
+    let i=0, j=0, k=start;
+
+    while(i<left.length && j<right.length)
+    {
+        if(left[i] <= right[j])
+            arr[k++] = left[i++];
+        else
+            arr[k++] = right[j++];
+        renderArray(k-1);
+        await new Promise(resolve => setTimeout(resolve,1000));
+    }
+
+    while(i<left.length)
+    {
+        arr[k++] = left[i++];
+        renderArray(k-1);
+        await new Promise(resolve => setTimeout(resolve,1000));
+    }
+
+    while(j<right.length)
+    {
+        arr[k++] = right[j++];
+        renderArray(k-1);
+        await new Promise(resolve => setTimeout(resolve,1000));
+    }
+
+    renderArray();
+}
