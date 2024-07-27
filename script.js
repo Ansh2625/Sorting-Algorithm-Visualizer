@@ -81,7 +81,7 @@ async function insertionSort()
         }
         array[j+1] = key;
         renderArray(i);
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise(resolve => setTimeout(resolve,1000));
     }
     renderArray();
 }
