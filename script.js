@@ -43,3 +43,25 @@ async function bubbleSort()
     }
     renderArray();
 }
+
+async function selectionSort()
+{
+    for(let i=0; i<array.length-1; i++)
+    {
+        let minIdx = i;
+        for(let j=i+1; j<array.length; j++)
+        {
+            if(array[j] < array[minIdx])
+            {
+                minIdx = j;
+            }
+        }
+        if(minIdx != i)
+        {
+            [array[i],array[minIdx]] = [array[minIdx],array[i]];
+            renderArray(i);
+            await new Promise(resolve => setTimeout(resolve,1000));
+        }
+    }
+    renderArray();
+}
