@@ -1,0 +1,39 @@
+body
+{
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number
+{
+    font-size: 40px;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.active
+{
+    color: red;
+    font-weight: bold;
+}
+
+.buttons
+{
+    margin-top: 20px;
+}
+
+button
+{
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
